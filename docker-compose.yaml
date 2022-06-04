@@ -1,0 +1,31 @@
+version: "3.9"
+services: 
+  php-fpm:
+    image: php-fpm-7
+    build:
+      context: ./
+      dockerfile: docker/php-7/Dockerfile
+    #restart: always
+    environment:
+      - UID=1000
+    command: php artisan serve --port=80 --host=0.0.0.0
+    volumes:
+      - .:/application
+    ports: 
+        - 80:80
+  db:
+    image: mysql:8.0.29
+    command: --default-authentication-plugin=mysql_native_password
+    #restart: always
+    volumes:
+      - database:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD="xxxxxxxx"
+    
+networks:     
+  defautl:
+    external:
+      name: application-laravel
+
+volumes:
+  database:
