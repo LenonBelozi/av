@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
         git \
         npm \
 	&& docker-php-ext-configure gd --with-freetype --with-jpeg \
-	&& docker-php-ext-install -j$(nproc) gd 
+	&& docker-php-ext-install -j$(nproc) gd
 
 RUN docker-php-ext-install \
     bcmath \
@@ -34,8 +34,8 @@ RUN docker-php-ext-install \
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-COPY docker/setup.sh /tmp/setup.sh 
+COPY docker/setup.sh /tmp/setup.sh
 
 RUN chmod +x /tmp/setup.sh
 
-CMD ["sh", "setup.sh"]
+CMD ["sh", "/tmp/setup.sh"]

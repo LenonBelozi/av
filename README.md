@@ -4,11 +4,15 @@
 
 - Execute o comando "docker-compose build" para buildar a imagem docker do PHP 7.4.29-fpm-buster. 
 
+- Execute "docker exec -it "nomecontainer" composer install".
+
+- Edita o arquivo docker-composer e descomente a linha 11.
+
 - Execute o comando "docker-compose up -d" para inicializar os containers. 
 
 - Edite o arquivo docker-compose.yaml e delete a variavel de ambiente "MYSQL_ROOT_PASSWORD="xxxxxxxx" do arquivo, pois após a primeira inicialização, não sera mais necessario e não ficará com a senha exposta no arquivo. 
 
-- Abra o http://localhost em seu navegador. 
+- Abra o http://localhost em seu navegador.
 
 -----------------------------
 

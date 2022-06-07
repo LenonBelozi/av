@@ -1,5 +1,5 @@
 version: "3.9"
-services: 
+services:
   php-fpm:
     image: php-fpm-7
     build:
@@ -8,10 +8,12 @@ services:
     #restart: always
     environment:
       - UID=1000
-    command: php artisan serve --port=80 --host=0.0.0.0
+    #command: php artisan serve --port=80 --host=0.0.0.0
+
+
     volumes:
       - .:/application
-    ports: 
+    ports:
         - 80:80
   db:
     image: mysql:8.0.29
@@ -20,9 +22,11 @@ services:
     volumes:
       - database:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD="xxxxxxxx"
-    
-networks:     
+      - MYSQL_ROOT_PASSWORD="AVb@nc02O22_"
+    ports:
+      - 3306:3306
+
+networks:
   defautl:
     external:
       name: application-laravel
