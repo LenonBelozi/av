@@ -2,11 +2,11 @@
 
 - Edite o arquivo docker-compose.yaml e altere a variavel de ambiente "MYSQL_ROOT_PASSWORD="xxxxxxxx" com a senha root do servidor MYSQL.
 
-- Execute o comando "docker-compose build" para buildar a imagem docker do PHP 7.4.29-fpm-buster. 
-
-- Execute "docker exec -it "nomecontainer" composer install".
+- Execute o comando "docker-compose build" para buildar a imagem docker do PHP 7.4.29-fpm-buster.
 
 - Edita o arquivo docker-composer e descomente a linha 11.
+
+- Execute "docker exec -it "nomecontainer" composer install".
 
 - Execute o comando "docker-compose up -d" para inicializar os containers. 
 
