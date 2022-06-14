@@ -38,4 +38,4 @@ COPY docker/setup.sh /tmp/setup.sh
 
 RUN chmod +x /tmp/setup.sh
 
-CMD ["sh", "/tmp/setup.sh"]
+#CMD ["sh", "/tmp/setup.sh"]
