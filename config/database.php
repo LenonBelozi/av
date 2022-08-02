@@ -63,6 +63,21 @@ return [
             ]) : [],
         ],
 
+        'mysql_RBM' => [
+            'driver' => 'mysql',
+            'host' => env('DB_HOST_MYSQL_RBM', '127.0.0.1'),
+            'port' => env('DB_PORT_MYSQL_RBM', '3306'),
+            'database' => env('DB_DATABASE_MYSQL_RBM', ''),
+            'username' => env('DB_USERNAME_MYSQL_RBM', ''),
+            'password' => env('DB_PASSWORD_MYSQL_RBM', ''),
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
