@@ -11,10 +11,7 @@ class ApiController extends Controller
 
     public function getStatusOperacao($codoperacao)
     {
-        $statusAnalise = DB::connection('mysql_RBM')->select('SELECT 	OPEF.ASSINADASAPROVADAS 	AS STATUS_ASSINADA,
-                                                                                    OPEF.DTHRASSINADASAPROVADAS AS DTHR_ASSINADA,
-                                                                                    OPEF.APROVACAO 				AS STATUS_APROVACAO,
-                                                                                    OPEF.DTHRAPROVACAO 			AS DTHR_APROVACAO
+        $statusAnalise = DB::connection('mysql_RBM')->select('SELECT 	OPEF.ASSINADASAPROVADAS 	AS OPERACAO_PAGA
                                                                             FROM avcapital_websec.operacoes_financeiro OPEF
                                                                             INNER JOIN avcapital_websec.operacao OPE
                                                                                 ON OPEF.CODOPERACAO = OPE.CODOPERACAO
